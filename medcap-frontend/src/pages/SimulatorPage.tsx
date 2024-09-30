@@ -1,15 +1,15 @@
-// src/pages/RetrievePage.tsx
+// src/pages/SimulatorPage.tsx
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import './../styles/pages.css';
 
-const RetrievePage: React.FC = () => {
+const SimulatorPage: React.FC = () => {
   const [search, setSearch] = useState('');
 
   const dataList = [
-    'MEDCAP | Sequence 1 | Date',
-    'MEDCAP | Sequence 2 | Date',
-    'MEDCAP | Sequence 3 | Date',
+    'MEDCAP | Simulator 1 | Date | Sequence 1 | Image 1',
+    'MEDCAP | Simulator 2 | Date | Sequence 2 | Image 2',
+    'MEDCAP | Simulator 3 | Date | Sequence 3 | Image 3',
     // Add more data as needed
   ];
 
@@ -21,7 +21,7 @@ const RetrievePage: React.FC = () => {
     <div className="page-container">
       <Sidebar />
       <div className="retrieve-container">
-        <h1>Retrieve Data</h1>
+        <h1>Simulate Data</h1>
         <input
           type="text"
           className="search-bar"
@@ -39,4 +39,4 @@ const RetrievePage: React.FC = () => {
   );
 };
 
-export default RetrievePage;
+export default SimulatorPage;

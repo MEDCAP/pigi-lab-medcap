@@ -1,15 +1,15 @@
-// src/pages/RetrievePage.tsx
+// src/pages/ImagesPage.tsx
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import './../styles/pages.css';
 
-const RetrievePage: React.FC = () => {
+const ImagesPage: React.FC = () => {
   const [search, setSearch] = useState('');
 
   const dataList = [
-    'MEDCAP | Sequence 1 | Date',
-    'MEDCAP | Sequence 2 | Date',
-    'MEDCAP | Sequence 3 | Date',
+    'MEDCAP | Image 1 | Date | Sequence 1',
+    'MEDCAP | Image 2 | Date | Sequence 2',
+    'MEDCAP | Image 3 | Date | Sequence 3',
     // Add more data as needed
   ];
 
@@ -21,7 +21,7 @@ const RetrievePage: React.FC = () => {
     <div className="page-container">
       <Sidebar />
       <div className="retrieve-container">
-        <h1>Retrieve Data</h1>
+        <h1>Image Data</h1>
         <input
           type="text"
           className="search-bar"
@@ -39,4 +39,4 @@ const RetrievePage: React.FC = () => {
   );
 };
 
-export default RetrievePage;
+export default ImagesPage;
