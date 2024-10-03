@@ -1,6 +1,8 @@
 // src/components/Sidebar.tsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa';
+
 import './../styles/sidebar.css';
 
 const Sidebar: React.FC = () => {
@@ -13,14 +15,15 @@ const Sidebar: React.FC = () => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <button className="toggle-btn" onClick={toggleSidebar}>
-        {isOpen ? 'Hide' : 'Show'}
+        <FaBars /> {/* Hamburger Icon */}
       </button>
-      <div className="sidebar-links">
-        <Link to="/retrieve">MRD Files</Link>
-        <Link to="/images">Images</Link>
-        <Link to="/simulator">Simulator</Link>
-        <Link to="/upload">Upload</Link>
-      </div>
+      {isOpen && (
+        <div className="sidebar-links">
+          <Link to="/retrieve">MRD Files</Link>
+          <Link to="/images">Images</Link>
+          <Link to="/simulator">Simulator</Link>
+        </div>
+      )}
     </div>
   );
 };

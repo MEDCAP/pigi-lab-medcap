@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import './../styles/pages.css';
+import './../styles/retrieve.css';
 
 const ImagesPage: React.FC = () => {
   const [search, setSearch] = useState('');
@@ -10,7 +11,6 @@ const ImagesPage: React.FC = () => {
     'MEDCAP | Image 1 | Date | Sequence 1',
     'MEDCAP | Image 2 | Date | Sequence 2',
     'MEDCAP | Image 3 | Date | Sequence 3',
-    // Add more data as needed
   ];
 
   const filteredData = dataList.filter((item) =>
@@ -20,20 +20,22 @@ const ImagesPage: React.FC = () => {
   return (
     <div className="page-container">
       <Sidebar />
-      <div className="retrieve-container">
-        <h1>Image Data</h1>
-        <input
-          type="text"
-          className="search-bar"
-          placeholder="Search..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <ul className="data-list">
-          {filteredData.map((item, index) => (
-            <li key={index} className="data-item">{item}</li>
-          ))}
-        </ul>
+      <div className="retrieve-content">
+        <div className="retrieve-container">
+          <h1>Image Data</h1>
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <ul className="data-list">
+            {filteredData.map((item, index) => (
+              <li key={index} className="data-item">{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
